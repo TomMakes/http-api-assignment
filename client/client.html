@@ -32,7 +32,6 @@ const handleResponse = (xhr) => {
     else { h1.textContent = "";}
     p.textContent = `Message: ${obj.message}`; 
 
-    console.log("I'm doing something JSON");
   } //if response was in xml
   else if (type === 'text/xml') {
 //grab the name tag and age tag from our responseXML
@@ -46,7 +45,6 @@ const handleResponse = (xhr) => {
       
     p.textContent = `Message: ${message}`; 
 
-    console.log("I'm doing something XML");
   }
   
 //append the h1 and p to the content.
@@ -79,10 +77,6 @@ const init = () => {
 
   let pageType = "/";
   let responseType = 'application/json';
-  
- //functions to call sendAjax for us with the correct parameters
-  const sendJSON = () => sendAjax('/cats', 'application/json');
-  const sendXML = () => sendAjax('/cats', 'text/xml');
   
  //attach the correct functions to the correct events
   sendDataButton.addEventListener('click', function () { sendAjax(pageType, responseType) });
